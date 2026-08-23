@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>선릿모닝 이어가기 — 9월의 새벽 · 포근나루</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="함께 걸어온 새벽을 9월에도 이어갑니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="선릿모닝 이어가기 — 9월의 새벽">
+<meta property="og:description" content="같은 시간, 같은 자리에서. 9월에도 함께 쓰시겠어요?">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600&family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&family=Gowun+Dodum&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#131F38; --night2:#22304F; --violet:#4E4066; --dusk:#8E5A62;
+  --sunrise:#C97B5E; --apricot:#EBAE85; --gold:#F7D98B; --morning:#FDF6E7;
+  --lightink:#EFE7DA;
+}
+*{margin:0;padding:0;box-sizing:border-box;min-width:0;}
+html{background:var(--morning);}
+body{font-family:'Nanum Myeongjo',serif;line-height:1.95;background:var(--morning);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  word-break:keep-all;overflow-wrap:break-word;}
+svg{max-width:100%;}
+.wrap{width:100%;max-width:640px;margin:0 auto;padding:0 26px;}
+.eyebrow{font-family:'Gowun Dodum',sans-serif;font-size:12px;letter-spacing:.26em;text-transform:uppercase;}
+.eb-rule{width:44px;height:1px;margin:14px auto 0;border:none;}
+.label{font-family:'Gowun Dodum',sans-serif;font-size:11.5px;letter-spacing:.2em;
+  text-transform:uppercase;text-align:center;margin:0 0 20px;}
+.wave{display:block;width:100%;height:38px;margin-top:-1px;}
+.ln{display:block;}
+
+/* ── ZONE 1 : night ── */
+.z1{background:linear-gradient(180deg,var(--night) 0%, var(--night2) 100%);}
+.hero{position:relative;text-align:center;padding:88px 26px 56px;overflow:hidden;}
+.stars{position:absolute;inset:0;pointer-events:none;
+  background-image:
+    radial-gradient(1.6px 1.6px at 14% 24%, #fff 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 80% 16%, #fff 50%, transparent 51%),
+    radial-gradient(1.1px 1.1px at 36% 66%, #fff 50%, transparent 51%),
+    radial-gradient(1.4px 1.4px at 86% 52%, #fff 50%, transparent 51%),
+    radial-gradient(1.1px 1.1px at 60% 32%, #fff 50%, transparent 51%);
+  opacity:.5;}
+.hero .eyebrow{color:var(--apricot);}
+.hero .eb-rule{background:var(--apricot);opacity:.7;}
+.hero .en{font-family:'Playfair Display',serif;font-style:italic;font-weight:500;
+  font-size:38px;color:var(--gold);margin-top:26px;}
+.hero .ko{font-family:'Gowun Batang',serif;font-weight:700;font-size:52px;color:#fff;
+  letter-spacing:.04em;margin-top:2px;}
+.hero .sub{font-family:'Gowun Batang',serif;font-size:17px;color:#B9C4DC;margin-top:18px;letter-spacing:.1em;}
+
+/* ── ZONE 2 : 지나온 새벽 ── */
+.z2{background:linear-gradient(180deg,var(--night2) 0%, #35335A 55%, var(--violet) 100%);
+  padding:56px 0 42px;}
+.z2 .lede{text-align:center;}
+.z2 .lede p{font-size:19.5px;color:var(--lightink);}
+.z2 .lede p + p{margin-top:30px;}
+.z2 .hl{color:var(--gold);font-weight:700;}
+
+/* ── ZONE 3 : 9월 ── */
+.z3{background:linear-gradient(180deg,var(--violet) 0%, #6B4A63 60%, var(--dusk) 100%);
+  padding:52px 0 44px;text-align:center;}
+.z3 .label{color:var(--gold);opacity:.85;}
+.z3 .num{font-family:'Cormorant Garamond',serif;font-feature-settings:"onum" 1;
+  font-size:120px;line-height:1;color:var(--gold);}
+.z3 .numko{font-family:'Gowun Batang',serif;font-size:26px;color:var(--gold);
+  letter-spacing:.1em;margin-top:-6px;}
+.z3 p{font-size:18.5px;color:var(--lightink);margin-top:20px;}
+.z3 .hl{color:var(--gold);}
+
+/* ── ZONE 4 : 이어가는 법 ── */
+.z4{background:linear-gradient(180deg,var(--dusk) 0%, #B06A5C 55%, var(--sunrise) 100%);
+  padding:52px 0 46px;}
+.z4 .label{color:#FFE9C9;}
+.step{max-width:520px;margin:0 auto;display:flex;gap:16px;align-items:flex-start;
+  padding:16px 0;}
+.step + .step{border-top:1px solid rgba(255,240,220,.22);}
+.step .n{flex:0 0 30px;height:30px;border-radius:50%;
+  background:rgba(255,243,228,.9);color:#8E4A32;
+  font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;
+  display:flex;align-items:center;justify-content:center;margin-top:5px;}
+.step .t{font-size:17.5px;color:#FFF3E4;line-height:1.85;}
+.step .t b{color:var(--gold);font-weight:700;}
+.step .t em{display:block;font-family:'Gowun Dodum',sans-serif;font-style:normal;
+  font-size:13.5px;color:#FFE0C6;opacity:.9;margin-top:5px;line-height:1.75;}
+
+/* ── ZONE 5 : 쉬어가도 괜찮습니다 ── */
+.z5{background:linear-gradient(180deg,var(--sunrise) 0%, var(--apricot) 100%);padding:48px 0 44px;}
+.z5 .label{color:#6E2F1C;}
+.z5 .rest{max-width:520px;margin:0 auto;text-align:center;font-size:17.5px;color:#42230F;}
+.z5 .rest .big{font-family:'Gowun Batang',serif;font-weight:700;font-size:22px;color:#FFF3E4;}
+
+/* ── ZONE 6 : 안내 + CTA ── */
+.z6{background:linear-gradient(180deg,var(--apricot) 0%, var(--gold) 45%, var(--morning) 100%);
+  padding:48px 0 20px;}
+.z6 .label{color:#A2522C;}
+.info{background:rgba(255,255,255,.42);border:1px solid rgba(255,255,255,.75);
+  border-radius:16px;padding:10px 26px;}
+.info .row{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid rgba(160,90,50,.16);}
+.info .row:last-of-type{border-bottom:none;}
+.info .k{flex:0 0 74px;font-family:'Gowun Dodum',sans-serif;font-size:13.5px;color:#A2522C;}
+.info .v{font-size:17px;color:#3A2214;}
+.info .note{padding:12px 0 4px;font-family:'Gowun Dodum',sans-serif;font-size:13px;
+  color:#8A4526;text-align:center;}
+.cta{text-align:center;padding:50px 0 10px;}
+.cta .en{font-family:'Playfair Display',serif;font-style:italic;font-size:26px;color:#B5643C;}
+.cta p{font-size:18px;color:#4A3520;margin:16px 0 22px;}
+.cta a.btn{display:inline-block;font-family:'Gowun Dodum',sans-serif;font-size:16px;color:#FFF9EC;
+  background:#B5643C;text-decoration:none;padding:16px 44px;border-radius:40px;letter-spacing:.04em;
+  box-shadow:0 8px 22px rgba(181,100,60,.28);
+  transition:transform .15s ease, box-shadow .15s ease;}
+.cta a.btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(181,100,60,.34);}
+.cta .note{display:block;margin-top:14px;font-family:'Gowun Dodum',sans-serif;font-size:12.5px;color:#9A7A54;}
+.ask{text-align:center;margin-top:30px;font-family:'Gowun Dodum',sans-serif;
+  font-size:13.5px;color:#8A6B45;line-height:2;}
+.ask a{color:#B5643C;text-decoration:none;border-bottom:1px solid rgba(181,100,60,.4);}
+footer{text-align:center;padding:40px 22px 58px;background:var(--morning);}
+footer .tag{font-size:15px;color:#6B5535;}
+footer .tag b{font-family:'Gowun Batang',serif;font-weight:700;}
+footer .brand{display:block;font-family:'Gowun Dodum',sans-serif;font-size:11.5px;
+  letter-spacing:.18em;color:#A98F63;margin-top:10px;}
+
+/* ── 모바일 ── */
+@media (max-width:560px){
+  .brk{display:none;}
+  .wrap{padding-left:20px;padding-right:20px;}
+  .wave{height:26px;}
+  .hero{padding:64px 20px 42px;}
+  .hero .en{font-size:28px;margin-top:20px;}
+  .hero .ko{font-size:38px;}
+  .hero .sub{font-size:15px;margin-top:14px;}
+  .z2{padding:44px 0 34px;}
+  .z2 .lede p{font-size:17px;}
+  .z3{padding:42px 0 36px;}
+  .z3 .num{font-size:88px;}
+  .z3 .numko{font-size:22px;}
+  .z3 p{font-size:16.5px;}
+  .z4{padding:42px 0 38px;}
+  .step{gap:13px;padding:14px 0;}
+  .step .n{flex-basis:26px;height:26px;font-size:17px;}
+  .step .t{font-size:16px;}
+  .step .t em{font-size:12.5px;}
+  .z5{padding:40px 0 36px;}
+  .z5 .rest{font-size:16px;}
+  .z5 .rest .big{font-size:19px;}
+  .z6{padding:40px 0 16px;}
+  .info{padding:6px 18px;}
+  .info .k{flex-basis:62px;font-size:12.5px;}
+  .info .v{font-size:15.5px;}
+  .cta{padding:42px 0 8px;}
+  .cta .en{font-size:22px;}
+  .cta p{font-size:16px;}
+  .cta a.btn{padding:15px 38px;}
+}
+</style>
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../favicon-180.png">
+</head>
+<body>
+
+<div class="z1">
+  <div class="hero">
+    <div class="stars"></div>
+    <div class="eyebrow">POGNARU STUDIO</div><hr class="eb-rule">
+    <div class="en">Sunlit Morning</div>
+    <div class="ko">이어가기</div>
+    <div class="sub">함께 걸어온 새벽</div>
+  </div>
+</div>
+<svg class="wave" viewBox="0 0 760 38" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,14 C 95,34 195,-2 290,14 C 385,30 475,-2 575,14 C 665,28 720,6 760,16 L760,38 L0,38 Z" fill="#22304F"/></svg>
+
+<div class="z2"><div class="wrap">
+  <div class="lede">
+    <p>
+      <span class="ln">여름의 새벽을 함께 지나왔습니다.</span>
+      <span class="ln">잘 쓴 날도 있었고,</span>
+      <span class="ln">한 줄도 못 쓰고 앉아만 있던 날도 있었을 거예요.</span>
+    </p>
+    <p>
+      <span class="ln">그래도 <span class="hl">그 시간에 그 자리에 계셨습니다.</span></span>
+      <span class="ln">저에게는 그것이 가장 큰 일이었어요.</span>
+    </p>
+  </div>
+</div></div>
+<svg class="wave" viewBox="0 0 760 38" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,16 C 100,-2 200,32 300,14 C 400,-2 490,30 590,16 C 670,4 725,24 760,14 L760,38 L0,38 Z" fill="#4E4066"/></svg>
+
+<div class="z3"><div class="wrap">
+  <div class="label">Next month</div>
+  <div class="num">9</div>
+  <div class="numko">구월</div>
+  <p>같은 시간, 같은 자리에서<br><span class="hl">9월에도 함께 쓰시겠어요?</span></p>
+</div></div>
+<svg class="wave" viewBox="0 0 760 38" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,12 C 90,32 190,0 290,16 C 390,32 480,2 580,14 C 665,24 725,8 760,16 L760,38 L0,38 Z" fill="#8E5A62"/></svg>
+
+<div class="z4"><div class="wrap">
+  <div class="label">How to continue</div>
+  <div class="step">
+    <div class="n">1</div>
+    <div class="t">아래 <b>신청 폼</b>을 열어 참여 시작 시기에서 <b>'다음달 이어가기'</b>를 골라주세요.
+      <em>처음 신청하실 때 쓰신 그 폼입니다. 새로 만드는 것이 없어요.</em></div>
+  </div>
+  <div class="step">
+    <div class="n">2</div>
+    <div class="t">확인하면 <b>문자로 계좌를 안내</b>해 드립니다.
+      <em>참가비는 그대로 월 20,000원입니다.</em></div>
+  </div>
+  <div class="step">
+    <div class="n">3</div>
+    <div class="t"><b>28일</b>까지 입금이 확인되면 9월 첫 새벽부터 끊김 없이 이어집니다.
+      <em>줌 링크는 매달 비밀번호가 바뀌어, 새 링크를 다시 보내드려요.</em></div>
+  </div>
+</div></div>
+<svg class="wave" viewBox="0 0 760 38" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,16 C 95,-2 195,30 295,14 C 395,-2 485,28 585,16 C 668,6 726,22 760,13 L760,38 L0,38 Z" fill="#C97B5E"/></svg>
+
+<div class="z5"><div class="wrap">
+  <div class="label">Take your time</div>
+  <div class="rest">
+    <span class="ln">이번 달은 쉬어가셔도 괜찮습니다.</span>
+    <span class="ln big" style="margin-top:12px;">문은 늘 열어둘게요.</span>
+    <span class="ln" style="margin-top:12px;">쉬었다가 돌아오셔도</span>
+    <span class="ln">처음부터 다시 시작하는 것이 아닙니다.</span>
+  </div>
+</div></div>
+<svg class="wave" viewBox="0 0 760 38" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,13 C 92,30 192,2 292,16 C 392,30 482,2 582,14 C 666,24 724,8 760,16 L760,38 L0,38 Z" fill="#EBAE85"/></svg>
+
+<div class="z6"><div class="wrap">
+  <div class="label">September</div>
+  <div class="info">
+    <div class="row"><div class="k">기간</div><div class="v">9월 1일(화) ~ 30일(수)</div></div>
+    <div class="row"><div class="k">시간</div><div class="v">새벽 5시 50분부터 30분간</div></div>
+    <div class="row"><div class="k">방식</div><div class="v">줌 (오디오 off, 화면 on)</div></div>
+    <div class="row"><div class="k">참가비</div><div class="v">2만원</div></div>
+    <div class="note">토·일·법정공휴일과 9월 24일·25일은 쉬어가는 날입니다</div>
+  </div>
+  <div class="cta">
+    <div class="en">See you at dawn</div>
+    <p>9월의 새벽에서 뵐게요.</p>
+    <a class="btn" href="https://naver.me/GcAknJnT" target="_blank" rel="noopener noreferrer">이어가기 신청</a>
+    <span class="note">네이버 신청 페이지로 연결됩니다 · '다음달 이어가기'를 골라주세요</span>
+  </div>
+  <div class="ask">
+    궁금한 것이 있으시면 언제든 <a href="https://pf.kakao.com/_AxbxmxhX/chat" target="_blank" rel="noopener noreferrer">카카오채널 1:1</a>로 말씀해 주세요.<br>
+    평일 06시~18시에 답해드립니다.
+  </div>
+</div></div>
+
+<footer>
+  <div class="tag">고요히, 마음에 머무는 글을 전하는 <b>포근나루</b></div>
+  <span class="brand">POGNARU STUDIO</span>
+</footer>
+
+</body>
+</html>
