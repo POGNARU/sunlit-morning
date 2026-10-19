@@ -9,216 +9,419 @@
 <meta property="og:title" content="선릿모닝 — 함께 쓰는 새벽">
 <meta property="og:description" content="매일 아침 5시 50분, 각자의 자리에서 30분을 씁니다. 혼자면 사흘, 함께면 이어집니다.">
 <meta property="og:url" content="https://pognaru.github.io/sunlit-morning/">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600&family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&family=Gowun+Dodum&display=swap" rel="stylesheet">
-<style>
-:root{
-  --night:#131F38; --night2:#22304F; --violet:#4E4066; --dusk:#8E5A62;
-  --sunrise:#C97B5E; --apricot:#EBAE85; --gold:#F7D98B; --morning:#FDF6E7;
-  --lightink:#EFE7DA;
-}
-*{margin:0;padding:0;box-sizing:border-box;min-width:0;}
-html{background:var(--morning);}
-body{font-family:'Nanum Myeongjo',serif;line-height:1.95;background:var(--morning);
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;
-  word-break:keep-all;overflow-wrap:break-word;}
-svg{max-width:100%;}
-.wrap{width:100%;max-width:640px;margin:0 auto;padding:0 26px;}
-.eyebrow{font-family:'Gowun Dodum',sans-serif;font-size:12px;letter-spacing:.26em;text-transform:uppercase;}
-.eb-rule{width:44px;height:1px;margin:14px auto 0;border:none;}
-.label{font-family:'Gowun Dodum',sans-serif;font-size:11.5px;letter-spacing:.2em;
-  text-transform:uppercase;text-align:center;margin:0 0 20px;}
-.wave{display:block;width:100%;height:38px;margin-top:-1px;}
-
-/* ── ZONE 1 : night ── */
-.z1{background:linear-gradient(180deg,var(--night) 0%, var(--night2) 100%);}
-.hero{position:relative;text-align:center;padding:92px 26px 58px;overflow:hidden;}
-.stars{position:absolute;inset:0;pointer-events:none;
-  background-image:
-    radial-gradient(1.6px 1.6px at 14% 24%, #fff 50%, transparent 51%),
-    radial-gradient(1.2px 1.2px at 80% 16%, #fff 50%, transparent 51%),
-    radial-gradient(1.1px 1.1px at 36% 66%, #fff 50%, transparent 51%),
-    radial-gradient(1.4px 1.4px at 86% 52%, #fff 50%, transparent 51%),
-    radial-gradient(1.1px 1.1px at 60% 32%, #fff 50%, transparent 51%);
-  opacity:.5;}
-.hero .eyebrow{color:var(--apricot);}
-.hero .eb-rule{background:var(--apricot);opacity:.7;}
-.hero .en{font-family:'Playfair Display',serif;font-style:italic;font-weight:500;
-  font-size:44px;color:var(--gold);margin-top:26px;}
-.hero .ko{font-family:'Gowun Batang',serif;font-weight:700;font-size:58px;color:#fff;
-  letter-spacing:.04em;margin-top:2px;}
-.hero .sub{font-family:'Gowun Batang',serif;font-size:17px;color:#B9C4DC;margin-top:18px;letter-spacing:.1em;}
-
-/* ── ZONE 2 : deep blue → violet ── */
-.z2{background:linear-gradient(180deg,var(--night2) 0%, #35335A 55%, var(--violet) 100%);
-  padding:56px 0 40px;}
-.z2 .lede{text-align:center;}
-.z2 .lede p{font-size:20px;color:var(--lightink);}
-.z2 .hl{color:var(--gold);font-weight:700;}
-
-/* ── ZONE 3 : violet → dusk (5:50) ── */
-.z3{background:linear-gradient(180deg,var(--violet) 0%, #6B4A63 60%, var(--dusk) 100%);
-  padding:52px 0 44px;text-align:center;}
-.z3 .label{color:var(--gold);opacity:.85;}
-.z3 .num{font-family:'Cormorant Garamond',serif;font-feature-settings:"onum" 1;
-  font-size:132px;line-height:1;color:var(--gold);}
-.z3 p{font-size:19px;color:var(--lightink);margin-top:22px;}
-.z3 .hl{color:var(--gold);}
-
-/* ── ZONE 4 : dusk → sunrise (본문) ── */
-.z4{background:linear-gradient(180deg,var(--dusk) 0%, #B06A5C 55%, var(--sunrise) 100%);
-  padding:52px 0 46px;}
-.z4 .label{color:#FFE9C9;}
-.z4 p{font-size:18.5px;color:#FFF3E4;text-align:center;max-width:520px;margin-left:auto;margin-right:auto;}
-.z4 p + p{margin-top:34px;}
-/* 의미 단위로 끊어 읽도록 한 호흡씩 한 줄 */
-.ln{display:block;}
-.stone{font-family:'Gowun Batang',serif;font-weight:700;font-size:30px;color:var(--gold);}
-
-/* ── ZONE 5 : sunrise → apricot (이런 분께) ── */
-.z5{background:linear-gradient(180deg,var(--sunrise) 0%, var(--apricot) 100%);padding:48px 0 44px;}
-.z5 .label{color:#6E2F1C;}
-.z5 .it{font-size:17.5px;color:#42230F;padding:13px 0 13px 26px;position:relative;}
-.z5 .it::before{content:'';position:absolute;left:2px;top:22px;width:9px;height:9px;
-  border-radius:50%;background:#FFF3E4;}
-
-/* ── ZONE 6 : apricot → gold → morning ── */
-.z6{background:linear-gradient(180deg,var(--apricot) 0%, var(--gold) 45%, var(--morning) 100%);
-  padding:48px 0 20px;}
-.z6 .label{color:#A2522C;}
-.info{background:rgba(255,255,255,.42);border:1px solid rgba(255,255,255,.75);
-  border-radius:16px;padding:10px 26px;}
-.info .row{display:flex;gap:14px;padding:15px 0;border-bottom:1px solid rgba(160,90,50,.16);}
-.info .row:last-of-type{border-bottom:none;}
-.info .k{flex:0 0 74px;font-family:'Gowun Dodum',sans-serif;font-size:13.5px;color:#A2522C;}
-.info .v{font-size:17px;color:#3A2214;}
-.info .note{padding:12px 0 4px;font-family:'Gowun Dodum',sans-serif;font-size:13px;
-  color:#8A4526;text-align:center;}
-.cta{text-align:center;padding:50px 0 10px;}
-.cta .en{font-family:'Playfair Display',serif;font-style:italic;font-size:26px;color:#B5643C;}
-.cta p{font-size:18px;color:#4A3520;margin:16px 0 22px;}
-.cta a{display:inline-block;font-family:'Gowun Dodum',sans-serif;font-size:16px;color:#FFF9EC;
-  background:#B5643C;text-decoration:none;padding:16px 44px;border-radius:40px;letter-spacing:.04em;
-  box-shadow:0 8px 22px rgba(181,100,60,.28);
-  transition:transform .15s ease, box-shadow .15s ease;}
-.cta a:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(181,100,60,.34);}
-.cta .note{display:block;margin-top:14px;font-family:'Gowun Dodum',sans-serif;font-size:12.5px;color:#9A7A54;}
-footer{text-align:center;padding:40px 22px 58px;background:var(--morning);}
-footer .tag{font-size:15px;color:#6B5535;}
-footer .tag b{font-family:'Gowun Batang',serif;font-weight:700;}
-footer .brand{display:block;font-family:'Gowun Dodum',sans-serif;font-size:11.5px;
-  letter-spacing:.18em;color:#A98F63;margin-top:10px;}
-
-/* ── 모바일 ── */
-@media (max-width:560px){
-  /* 강제 줄바꿈 해제 — 좁은 화면에서 문장이 자연스럽게 접히도록 */
-  .brk{display:none;}
-  .wrap{padding-left:20px;padding-right:20px;}
-  .wave{height:26px;}
-  .hero{padding:66px 20px 44px;}
-  .hero .en{font-size:32px;margin-top:20px;}
-  .hero .ko{font-size:42px;}
-  .hero .sub{font-size:15px;margin-top:14px;}
-  .z2{padding:44px 0 32px;}
-  .z2 .lede p{font-size:17px;}
-  .z3{padding:42px 0 36px;}
-  .z3 .num{font-size:92px;}
-  .z3 p{font-size:16.5px;}
-  .z4{padding:42px 0 38px;}
-  .z4 p{font-size:16.5px;}
-  .stone{font-size:25px;}
-  .z5{padding:40px 0 36px;}
-  .z5 .it{font-size:16px;padding-left:22px;}
-  .z5 .it::before{top:19px;width:8px;height:8px;}
-  .z6{padding:40px 0 16px;}
-  .info{padding:6px 18px;}
-  .info .k{flex-basis:62px;font-size:12.5px;}
-  .info .v{font-size:15.5px;}
-  .cta{padding:42px 0 8px;}
-  .cta .en{font-size:22px;}
-  .cta p{font-size:16px;}
-  .cta a{padding:15px 38px;}
-}
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&family=Gowun+Dodum&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+<style>
+/* ============================================================
+   선릿모닝 모집 — 2026-10-19 「줄 노트」 판 · 나무🌳 (다현씨가 A판으로 고르심)
+   기준: 포근나루 DESIGN.md(화면판, 정본 base.css :root)
+   세계: 「줄 노트」 — 페이지가 곧 5시 50분에 펴는 공책이다.
+         모든 글줄은 한 줄 높이(--row)의 배수로 서서 괘선 위에 앉는다.
+   ============================================================ */
+:root{
+  --canvas:#FFFFFF;
+  --ink:#3C2415;          /* 흰 위 14.43 */
+  --ink-soft:#5C4433;     /* 흰 위 9.01 */
+  --terra:#A9532A;        /* 흰 위 5.31 · 형광 위 4.85 · 잉크 위 금지 */
+  --hl:#FFF7B1;           /* 형광펜 — 좁게만. 잉크 위 글자 13.19 */
+  --hl-hi:#FFEE88;
+  --amber:#FFC61E;        /* 선·점 전용. 흰 위 글자 금지(1.57) · 잉크 위 9.17 */
+  --rule:rgba(60,36,21,.085);         /* 공책 괘선 */
+  --line:rgba(60,36,21,.16);          /* 구역 괘선 */
+  --rule-night:rgba(255,255,255,.075);
+  --on-dark:#FFFFFF;
+  --on-dark-soft:rgba(255,255,255,.82);  /* 잉크 위 9.99 */
+
+  --display:"Gowun Batang",serif;
+  --serif:"Nanum Myeongjo",serif;
+  --ui:"Gowun Dodum",sans-serif;
+
+  --row:36px;                 /* 한 줄 — 모든 세로 치수의 단위 */
+  --page:1180px;
+  --margin:200px;             /* 공책 여백 칸 */
+  --gap:40px;
+  --gutter:clamp(16px,4vw,48px);
+  --shift:-7px;               /* 괘선을 조금 올려 글자가 줄 「위에」 앉게 */
+}
+@media (max-width:720px){
+  /* 폰: 여백 칸을 접는다. 호박 여백선은 왼쪽 가장자리가 되고, 이름표는 본문 칸 첫 줄로 */
+  :root{ --row:32px; --margin:0px; --gap:20px; --shift:-6px; }
+}
+
+*{margin:0;padding:0;box-sizing:border-box;min-width:0;}
+html{background:var(--canvas);-webkit-text-size-adjust:100%;}
+body{
+  font-family:var(--serif);
+  font-size:17px;
+  line-height:var(--row);
+  color:var(--ink);
+  background:var(--canvas);
+  letter-spacing:-.01em;
+  word-break:keep-all;overflow-wrap:break-word;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+::selection{background:var(--hl-hi);color:var(--ink);}
+a{color:inherit;}
+a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2px;}
+.night a:focus-visible{outline-color:var(--hl);}
+
+/* ── 공책: 괘선 바탕 + 여백 칸 ───────────────────────────── */
+.ruled{
+  position:relative;
+  background-image:repeating-linear-gradient(to bottom,
+    transparent 0, transparent calc(var(--row) - 1px),
+    var(--rule) calc(var(--row) - 1px), var(--rule) var(--row));
+  background-position:0 var(--shift);
+}
+.night.ruled{
+  background-color:var(--ink);
+  background-image:repeating-linear-gradient(to bottom,
+    transparent 0, transparent calc(var(--row) - 1px),
+    var(--rule-night) calc(var(--row) - 1px), var(--rule-night) var(--row));
+  color:var(--on-dark);
+}
+.sheet{
+  position:relative;
+  max-width:calc(var(--page) + var(--gutter) * 2);
+  margin:0 auto;
+  padding:0 var(--gutter);
+  display:grid;
+  grid-template-columns:var(--margin) minmax(0,1fr);
+  column-gap:var(--gap);
+}
+/* 여백선 — 호박 한 줄. 정보를 나르지 않는 선이라 호박이 맡는다.
+   구역을 건너 끊기지 않게 구역(.ruled) 자체에 긋는다 — 공책 한 권의 여백선은 하나다 */
+.ruled::before{
+  content:"";position:absolute;top:0;bottom:0;pointer-events:none;
+  left:calc(max(0px, (100% - var(--page) - var(--gutter) * 2) / 2) + var(--gutter) + var(--margin) + var(--gap) / 2);
+  width:1.5px;background:var(--amber);opacity:.75;
+}
+.night.ruled::before{opacity:.55;}
+.mg{grid-column:1;}       /* 여백 칸 */
+.mn{grid-column:2;}       /* 본문 칸 */
+
+/* 여백 칸의 이름표 — 손으로 적은 여백 메모 자리. 평문, 대문자 안 씀 */
+.note-label{
+  font-family:var(--ui);font-size:15px;color:var(--terra);
+  line-height:var(--row);text-align:right;
+}
+.night .note-label{color:var(--hl);}
+h2.note-label{font-weight:400;}
+
+/* ── 공통 글 ─────────────────────────────────────────── */
+.sec{padding:calc(var(--row) * 2) 0 var(--row);}
+.ln{display:block;}
+.mark{
+  background:linear-gradient(var(--hl),var(--hl)) no-repeat 0 78% / 100% 62%;
+  padding:0 .12em;margin:0 -.06em;
+  -webkit-box-decoration-break:clone;box-decoration-break:clone;
+}
+
+/* ── 머리 띠 ─────────────────────────────────────────── */
+.top{height:calc(var(--row) * 2);align-items:end;}
+.wordmark{
+  font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.1em;
+  line-height:var(--row);text-align:right;color:var(--ink);
+}
+.night .wordmark{color:var(--on-dark);}
+
+/* ── 이야기 ─────────────────────────────────────────── */
+.lede p{font-family:var(--display);font-size:clamp(30px,3.4vw,44px);line-height:calc(var(--row) * 2);letter-spacing:-.03em;}
+.lede .turn{font-weight:700;}
+.lede .ln:not(.turn){color:var(--ink-soft);}
+.how .mn{display:grid;grid-template-columns:repeat(2,minmax(0,max-content));column-gap:72px;}
+.how p{font-size:20px;}
+@media (max-width:1180px){.how .mn{grid-template-columns:1fr;}.how p + p{margin-top:var(--row);}}
+.how .stone{font-family:var(--display);font-weight:700;font-size:1.3em;}
+.for li{list-style:none;position:relative;font-family:var(--display);font-size:24px;line-height:var(--row);}
+.for li + li{margin-top:var(--row);}
+/* 여백선 위에 앉는 호박 점 — 「이런 분」 세 줄이 같은 선에 꿰인다 */
+.for li::before{
+  content:"";position:absolute;top:calc(var(--row) / 2 - 5px);
+  left:calc(var(--gap) / -2 - 4.25px);
+  width:10px;height:10px;border-radius:50%;background:var(--amber);
+}
+
+/* ── 정보 줄 (dl) ──────────────────────────────────────── */
+.facts{display:grid;grid-template-columns:max-content minmax(0,1fr);column-gap:24px;}
+.facts dt{font-family:var(--ui);font-size:15px;color:var(--terra);line-height:var(--row);}
+.facts dd{font-size:18px;line-height:var(--row);}
+.facts dd.price{font-family:var(--display);font-weight:700;font-size:22px;}
+.nw{white-space:nowrap;}
+.rest{font-family:var(--ui);font-size:14.5px;color:var(--ink-soft);line-height:var(--row);}
+.night .facts dt{color:var(--hl);}
+.night .rest{color:var(--on-dark-soft);}
+
+/* ── 신청 단추 ─────────────────────────────────────────── */
+.cta-row{margin-top:var(--row);display:flex;flex-wrap:wrap;align-items:center;column-gap:20px;}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  height:calc(var(--row) * 1.5);margin:calc(var(--row) * .25) 0;
+  padding:0 40px;border-radius:4px;
+  font-family:var(--ui);font-size:17px;letter-spacing:.02em;text-decoration:none;
+  background:var(--ink);color:var(--on-dark);
+  transition:background .18s ease, transform .18s ease;
+}
+.btn:hover{background:#54341E;}
+.btn:active{transform:translateY(1px);}
+.night .btn,.btn.on-dark{background:var(--hl);color:var(--ink);}
+.night .btn:hover,.btn.on-dark:hover{background:var(--hl-hi);}
+.cta-note{font-family:var(--ui);font-size:14.5px;line-height:var(--row);color:var(--ink-soft);}
+.night .cta-note{color:var(--on-dark-soft);}
+
+/* ── 줌 화면 칸 — 같은 달 모집 카드 1장의 그림. 「함께」를 말 없이 보여 주는 자리 ── */
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.tile{
+  position:relative;aspect-ratio:16/10;border-radius:12px;overflow:hidden;
+  background:radial-gradient(120% 120% at 28% 22%, #FFFBD9 0%, var(--hl) 34%, var(--hl-hi) 66%, var(--amber) 118%);
+  box-shadow:0 18px 40px -18px rgba(0,0,0,.55);
+  display:flex;flex-direction:column;justify-content:flex-end;gap:9px;padding:0 13% 13%;
+}
+.tile .w{display:block;height:2px;width:var(--w);background:rgba(60,36,21,.24);border-radius:2px;}
+.mute{position:absolute;top:9px;right:9px;width:28px;height:28px;padding:5px;border-radius:50%;background:rgba(60,36,21,.82);fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;}
+
+/* ── 맺음 ─────────────────────────────────────────── */
+.close .lets{font-family:var(--display);font-size:26px;line-height:var(--row);}
+.close .ask{font-family:var(--display);font-weight:700;font-size:clamp(30px,4vw,44px);line-height:calc(var(--row) * 2);letter-spacing:-.03em;}
+.night.close .lets{color:var(--hl);}
+
+/* ── 발치 ─────────────────────────────────────────── */
+footer{padding:calc(var(--row) * 2) var(--gutter) calc(var(--row) * 3);text-align:center;}
+footer .tag{font-size:16px;color:var(--ink);}
+footer .tag b{font-family:var(--display);font-weight:700;}
+footer .brand{display:block;margin-top:6px;font-family:var(--display);font-size:13px;letter-spacing:.18em;color:var(--ink-soft);line-height:var(--row);}
+footer .crew{display:block;font-family:var(--ui);font-size:13px;color:var(--ink-soft);line-height:var(--row);}
+
+/* ── 폰 바닥 띠: 첫 단추가 화면을 벗어나면 뜨고, 맨 아래 신청 칸이 보이면 숨는다 ── */
+.dock{display:none;}
+@media (max-width:720px){
+  .dock{
+    display:flex;align-items:center;justify-content:space-between;gap:12px;
+    position:fixed;left:0;right:0;bottom:0;z-index:20;
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    background:rgba(255,255,255,.96);border-top:1px solid var(--line);
+    transform:translateY(110%);transition:transform .28s cubic-bezier(.2,.8,.2,1);
+  }
+  .dock.show{transform:none;}
+  .dock .p{font-family:var(--ui);font-size:14.5px;color:var(--ink-soft);line-height:1.35;}
+  .dock .p b{display:block;font-family:var(--display);font-weight:700;font-size:19px;color:var(--ink);}
+  .dock .btn{height:46px;margin:0;padding:0 26px;font-size:16px;}
+}
+
+/* ── 폰 ─────────────────────────────────────────── */
+@media (max-width:720px){
+  body{font-size:16px;}
+  .mg{grid-column:2;}
+  .note-label{font-size:14px;text-align:left;}
+  .wordmark{font-size:13px;text-align:left;letter-spacing:.06em;}
+  .lede p{font-size:20px;line-height:var(--row);}
+  .lede .ln{display:inline;}
+  .lede .ln::after{content:" ";}
+  .lede .turn{display:block;}
+  .how p{font-size:16.5px;}
+  .for li{font-size:18px;}
+  .tiles{gap:8px;}
+  .mute{width:18px;height:18px;padding:3px;top:5px;right:5px;}
+  .facts{column-gap:14px;}
+  .facts dt{font-size:13.5px;}
+  .facts dd{font-size:16px;}
+  .facts dd.price{font-size:19px;}
+  .rest{font-size:13.5px;}
+  .btn{padding:0 34px;}
+  .cta-note{font-size:13.5px;}
+  .close .lets{font-size:21px;}
+  .close .ask{font-size:26px;line-height:var(--row);}
+  footer{padding-bottom:calc(var(--row) * 4);}
+  footer .tag{font-size:14.5px;}
+}
+
+/* ── A 「줄 노트」 첫 화면 — 흰 공책 한 장. 어두운 층은 맨 끝 「Join us」 하나 ── */
+.hero-a{padding-bottom:calc(var(--row) * 2);}
+.hero-a .hero-body{padding-top:var(--row);}
+.stamp{text-align:right;font-family:var(--display);color:var(--ink);padding-top:var(--row);}
+.stamp b{display:block;font-weight:700;font-size:46px;line-height:calc(var(--row) * 2);letter-spacing:-.02em;}
+.stamp span{display:block;font-family:var(--ui);font-size:15px;line-height:var(--row);color:var(--terra);}
+.hero-a .en{font-family:var(--display);font-size:26px;line-height:var(--row);color:var(--ink-soft);}
+.hero-a h1{font-family:var(--display);font-weight:700;font-size:clamp(108px,10.6vw,152px);line-height:calc(var(--row) * 5);letter-spacing:-.045em;margin-left:-.04em;}
+.hero-a .sub{font-family:var(--display);font-weight:700;font-size:30px;line-height:var(--row);}
+.hero-a .hook{font-size:22px;line-height:var(--row);max-width:16em;}
+.hero-a .hook b{font-weight:800;}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"en en" "h1 h1" "sub sub" "hook info" "cta info";column-gap:64px;}
+.hero-text{display:contents;}
+.hero-a .en{grid-area:en;}.hero-a h1{grid-area:h1;}.hero-a .sub{grid-area:sub;}
+.hero-a .hook{grid-area:hook;margin-top:calc(var(--row) * 2);}
+.hero-info{grid-area:info;padding-top:calc(var(--row) * 2);}
+.cta-a{grid-area:cta;align-self:start;}
+
+/* 맺음 — 공책이 불 켜진 화면들을 만나는 자리(어두운 층 하나) */
+.close-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,380px);column-gap:64px;}
+.close-text{grid-row:1;grid-column:1;}
+.close-tiles{grid-row:1;grid-column:2;padding-top:calc(var(--row) * .5);}
+/* 좁아지면 화면 넷을 한 줄로 올린다 — 높이는 줄(row)의 배수로 잡아 아래 글이 괘선에서 안 밀리게 */
+@media (max-width:1100px){
+  .close-grid{grid-template-columns:1fr;}
+  .close-tiles{grid-row:1;grid-column:1;padding:0;height:calc(var(--row) * 4);display:flex;align-items:center;max-width:720px;}
+  .close-tiles .tiles{grid-template-columns:repeat(4,1fr);width:100%;gap:10px;}
+  .close-text{grid-row:2;grid-column:1;padding-top:var(--row);}
+}
+@media (max-width:720px){
+  .close-tiles{height:calc(var(--row) * 2);}
+  .close-tiles .tiles{gap:7px;}
+  .close-tiles .w{display:none;}
+}
+
+/* 단 한 번의 움직임 — 형광펜이 「함께 쓰는 새벽」을 한 번 긋는다 */
+.swipe{background-size:0% 62%;animation:swipe .95s cubic-bezier(.16,1,.3,1) .35s forwards;}
+@keyframes swipe{to{background-size:100% 62%;}}
+@media (prefers-reduced-motion:reduce){.swipe{background-size:100% 62% !important;}}
+
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;grid-template-areas:none;}
+  .hero-a .en,.hero-a h1,.hero-a .sub,.hero-a .hook,.hero-info,.cta-a{grid-area:auto;grid-column:1;}
+  .hero-info{order:1;}.cta-a{order:2;}
+  .hero-a .hook{margin-top:var(--row);}
+  .hero-info{padding-top:var(--row);}
+  .hero-a h1{font-size:96px;line-height:calc(var(--row) * 3);}
+}
+@media (max-width:720px){
+  .hero-a{padding-bottom:calc(var(--row) * 2);}
+  .hero-a .hero-body{padding-top:0;}
+  .stamp{padding-top:0;text-align:left;}
+  .stamp b,.stamp span{display:inline;font-size:15px;line-height:var(--row);}
+  .stamp b{font-family:var(--display);}
+  .top .wordmark{grid-column:2;}
+  .stamp span{font-size:13px;}
+  .hero-a .en{font-size:18px;}
+  .hero-a h1{font-size:58px;line-height:calc(var(--row) * 2);}
+  .hero-a .sub{font-size:21px;}
+  .hero-a .hook{font-size:17.5px;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;}
+}
+</style>
 </head>
-<body>
+<body class="v-a">
+<!-- 매달 바꿀 곳(한 번에): 기간 — meta description · 정보 줄 「기간」 · 폰 바닥 띠 · 쉬는 날 줄 / 폼이 바뀌면 신청 주소 세 곳(첫 단추·맺음 단추·바닥 띠) -->
 
-<div class="z1">
-  <div class="hero">
-    <div class="stars"></div>
-    <div class="eyebrow">POGNARU STUDIO</div><hr class="eb-rule">
-    <div class="en">Sunlit Morning</div>
-    <div class="ko">선릿모닝</div>
-    <div class="sub">함께 쓰는 새벽</div>
+<header class="hero hero-a ruled">
+  <div class="sheet top"><div class="mg wordmark">POGNARU STUDIO</div></div>
+  <div class="sheet hero-body">
+    <p class="mg stamp"><b>5:50</b> <span>A.M.</span></p>
+    <div class="mn hero-grid">
+      <div class="hero-text">
+        <p class="en" lang="en">Sunlit Morning</p>
+        <h1>선릿모닝</h1>
+        <p class="sub"><span class="mark swipe">함께 쓰는 새벽</span></p>
+        <p class="hook">매일 아침 <b>5시 50분</b>, 각자의 자리에서 <b>30분</b>을 씁니다.</p>
+      </div>
+      <div class="cta-row cta-a">
+        <a class="btn" id="cta-first" href="https://naver.me/FM9yEnM2" target="_blank" rel="noopener noreferrer">신청하기</a>
+        <span class="cta-note">네이버 신청 페이지로 연결됩니다</span>
+      </div>
+      <div class="hero-info">
+        <dl class="facts">
+          <dt>기간</dt><dd>10월 1일 ~ 30일 (월~금)</dd>
+          <dt>시간</dt><dd>새벽 5시 50분부터 30분간</dd>
+          <dt>방식</dt><dd>줌 (오디오 off, 화면 on)</dd>
+          <dt>참가비</dt><dd class="price">월 3만원</dd>
+        </dl>
+        <p class="rest">토·일·법정공휴일은 쉬어가는 날입니다 <span class="nw">(10월 5일·9일)</span></p>
+      </div>
+    </div>
   </div>
-</div>
-<svg class="wave" viewBox="0 0 760 38" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,14 C 95,34 195,-2 290,14 C 385,30 475,-2 575,14 C 665,28 720,6 760,16 L760,38 L0,38 Z" fill="#22304F"/></svg>
+</header>
 
-<div class="z2"><div class="wrap">
-  <div class="lede">
-    <p>새벽에 혼자 쓰기로 마음먹어도,<br>대개 사흘이면 멈춥니다.<br>
-    <span class="hl">함께 쓰는 동지가 있으면 달라집니다.</span><br>
-    혼자 쓰는 시간인데도 외롭지 않고,<br>그래서 이어집니다.</p>
+<section class="sec lede ruled" aria-label="함께 쓰면 달라집니다">
+  <div class="sheet">
+    <div class="mn">
+      <p><span class="ln">새벽에 혼자 쓰기로 마음먹어도,</span><span class="ln">대개 사흘이면 멈춥니다.</span><span class="ln turn">함께 쓰는 동지가 있으면 달라집니다.</span><span class="ln">혼자 쓰는 시간인데도 외롭지 않고,</span><span class="ln">그래서 이어집니다.</span></p>
+    </div>
   </div>
-</div></div>
-<svg class="wave" viewBox="0 0 760 38" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,16 C 100,-2 200,32 300,14 C 400,-2 490,30 590,16 C 670,4 725,24 760,14 L760,38 L0,38 Z" fill="#4E4066"/></svg>
+</section>
 
-<div class="z3"><div class="wrap">
-  <div class="label">5:50 A.M.</div>
-  <div class="num">5:50</div>
-  <p>매일 아침 <span class="hl">5시 50분</span>, 각자의 자리에서<br><span class="hl">30분</span>을 씁니다.</p>
-</div></div>
-<svg class="wave" viewBox="0 0 760 38" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,12 C 90,32 190,0 290,16 C 390,32 480,2 580,14 C 665,24 725,8 760,16 L760,38 L0,38 Z" fill="#8E5A62"/></svg>
-
-<div class="z4"><div class="wrap">
-  <div class="label">How we write</div>
-  <p>
-    <span class="ln">선릿모닝은 새벽에 함께 쓰는 시간입니다.</span>
-    <span class="ln">잘 쓰지 않아도 됩니다.</span>
-    <span class="ln">검열 없이, 떠오르는 대로 그냥 씁니다.</span>
-    <span class="ln">지우지 않고, 멈추지 않고 — 그게 전부입니다.</span>
-  </p>
-  <p>
-    <span class="ln">무엇을 써야 할지 몰라도 괜찮습니다.</span>
-    <span class="ln">일단 씁니다.</span>
-    <span class="ln" style="margin-top:14px;">그 안에서 <span class="stone">빛나는 돌멩이</span>를</span>
-    <span class="ln">건질 수 있기를—</span>
-  </p>
-</div></div>
-<svg class="wave" viewBox="0 0 760 38" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,16 C 95,-2 195,30 295,14 C 395,-2 485,28 585,16 C 668,6 726,22 760,13 L760,38 L0,38 Z" fill="#C97B5E"/></svg>
-
-<div class="z5"><div class="wrap">
-  <div class="label">For you</div>
-  <div class="it">쓰고 싶은데 혼자서는 자꾸 미뤄지는 분</div>
-  <div class="it">새벽 시간을 나만의 것으로 갖고 싶은 분</div>
-  <div class="it">마음속 이야기를 어디서부터 꺼내야 할지 모르는 분</div>
-</div></div>
-<svg class="wave" viewBox="0 0 760 38" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,13 C 92,30 192,2 292,16 C 392,30 482,2 582,14 C 666,24 724,8 760,16 L760,38 L0,38 Z" fill="#EBAE85"/></svg>
-
-<div class="z6"><div class="wrap">
-  <div class="label">Join us</div>
-  <div class="info">
-    <div class="row"><div class="k">기간</div><div class="v">10월 1일 ~ 30일 (월~금)</div></div>
-    <div class="row"><div class="k">시간</div><div class="v">새벽 5시 50분부터 30분간</div></div>
-    <div class="row"><div class="k">방식</div><div class="v">줌 (오디오 off, 화면 on)</div></div>
-    <div class="row"><div class="k">참가비</div><div class="v">월 3만원</div></div>
-    <div class="note">토·일·법정공휴일은 쉬어가는 날입니다 (10월 5일·9일)</div>
+<section class="sec how ruled" aria-labelledby="how-label">
+  <div class="sheet">
+    <h2 class="mg note-label" id="how-label">How we write</h2>
+    <div class="mn">
+      <p>
+        <span class="ln">선릿모닝은 새벽에 함께 쓰는 시간입니다.</span>
+        <span class="ln">잘 쓰지 않아도 됩니다.</span>
+        <span class="ln">검열 없이, 떠오르는 대로 그냥 씁니다.</span>
+        <span class="ln">지우지 않고, 멈추지 않고 — 그게 전부입니다.</span>
+      </p>
+      <p>
+        <span class="ln">무엇을 써야 할지 몰라도 괜찮습니다.</span>
+        <span class="ln">일단 씁니다.</span>
+        <span class="ln">그 안에서 <span class="stone mark">빛나는 돌멩이</span>를</span>
+        <span class="ln">건질 수 있기를—</span>
+      </p>
+    </div>
   </div>
-  <div class="cta">
-    <div class="en">Let's begin</div>
-    <p>같은 새벽에, 함께 쓰시겠어요?</p>
-    <a href="https://naver.me/FM9yEnM2" target="_blank" rel="noopener noreferrer">신청하기</a>
-    <span class="note">네이버 신청 페이지로 연결됩니다</span>
+</section>
+
+<section class="sec for ruled" aria-labelledby="for-label">
+  <div class="sheet">
+    <h2 class="mg note-label" id="for-label">For you</h2>
+    <ul class="mn">
+      <li>쓰고 싶은데 혼자서는 자꾸 미뤄지는 분</li>
+      <li>새벽 시간을 나만의 것으로 갖고 싶은 분</li>
+      <li>마음속 이야기를 어디서부터 꺼내야 할지 모르는 분</li>
+    </ul>
   </div>
-</div></div>
+</section>
+
+<section class="sec close night ruled" aria-labelledby="join-label">
+  <div class="sheet">
+    <div class="mg note-label" id="join-label">Join us</div>
+    <div class="mn close-grid">
+      <figure class="close-tiles" aria-label="새벽 5시 50분, 줌에 켜진 네 사람의 화면 — 소리는 끄고 각자 씁니다">
+        <div class="tiles" aria-hidden="true">
+          <div class="tile"><svg class="mute" viewBox="0 0 24 24"><path d="M9 5a3 3 0 0 1 6 0v5M15 13.5A3 3 0 0 1 9 11V9.5M5.5 11a6.5 6.5 0 0 0 11 4.7M18.5 11v.2M12 17.5V20M4 4l16 16"/></svg><span class="w" style="--w:78%"></span><span class="w" style="--w:62%"></span><span class="w" style="--w:70%"></span></div>
+          <div class="tile"><svg class="mute" viewBox="0 0 24 24"><path d="M9 5a3 3 0 0 1 6 0v5M15 13.5A3 3 0 0 1 9 11V9.5M5.5 11a6.5 6.5 0 0 0 11 4.7M18.5 11v.2M12 17.5V20M4 4l16 16"/></svg><span class="w" style="--w:66%"></span><span class="w" style="--w:80%"></span><span class="w" style="--w:48%"></span></div>
+          <div class="tile"><svg class="mute" viewBox="0 0 24 24"><path d="M9 5a3 3 0 0 1 6 0v5M15 13.5A3 3 0 0 1 9 11V9.5M5.5 11a6.5 6.5 0 0 0 11 4.7M18.5 11v.2M12 17.5V20M4 4l16 16"/></svg><span class="w" style="--w:72%"></span><span class="w" style="--w:56%"></span><span class="w" style="--w:76%"></span></div>
+          <div class="tile"><svg class="mute" viewBox="0 0 24 24"><path d="M9 5a3 3 0 0 1 6 0v5M15 13.5A3 3 0 0 1 9 11V9.5M5.5 11a6.5 6.5 0 0 0 11 4.7M18.5 11v.2M12 17.5V20M4 4l16 16"/></svg><span class="w" style="--w:58%"></span><span class="w" style="--w:74%"></span><span class="w" style="--w:64%"></span></div>
+        </div>
+      </figure>
+      <div class="close-text">
+      <p class="lets" lang="en">Let's begin</p>
+      <p class="ask"><span class="ln">같은 새벽에,</span> <span class="ln">함께 쓰시겠어요?</span></p>
+      <div class="cta-row">
+        <a class="btn" id="cta-last" href="https://naver.me/FM9yEnM2" target="_blank" rel="noopener noreferrer">신청하기</a>
+        <span class="cta-note">네이버 신청 페이지로 연결됩니다</span>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="tag">고요히, 마음에 머무는 글을 전하는 <b>포근나루</b></div>
   <span class="brand">POGNARU STUDIO</span>
+  <span class="crew">지은 식구 · 나무🌳 바다🌊 김리🔨</span>
 </footer>
 
+<div class="dock" id="dock" aria-hidden="true">
+  <div class="p"><b>월 3만원</b>10월 1일 ~ 30일 (월~금)</div>
+  <a class="btn" href="https://naver.me/FM9yEnM2" target="_blank" rel="noopener noreferrer" tabindex="-1">신청하기</a>
+</div>
+
+<script>
+/* 폰 바닥 띠 — 신청 단추가 하나도 안 보일 때만 뜬다(첫 단추가 아직 아래 있거나, 이미 지나갔을 때) */
+(function(){
+  var dock=document.getElementById('dock'),first=document.getElementById('cta-first'),last=document.getElementById('cta-last');
+  if(!dock||!first||!last||!('IntersectionObserver' in window))return;
+  var past=false,atEnd=false;
+  function paint(){dock.classList.toggle('show',past&&!atEnd);}
+  new IntersectionObserver(function(e){past=!e[0].isIntersecting;paint();}).observe(first);
+  new IntersectionObserver(function(e){atEnd=e[0].isIntersecting;paint();}).observe(last);
+})();
+</script>
 </body>
 </html>
