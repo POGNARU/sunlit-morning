@@ -9,7 +9,7 @@
 <meta property="og:title" content="선릿모닝 — 함께 쓰는 새벽">
 <meta property="og:description" content="매일 아침 5시 50분, 각자의 자리에서 30분을 씁니다. 혼자면 사흘, 함께면 이어집니다.">
 <meta property="og:url" content="https://pognaru.github.io/sunlit-morning/">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#3C2415"><!-- 연말 옷 B: 원래 #FFFFFF -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&family=Gowun+Dodum&display=swap" rel="stylesheet">
@@ -305,10 +305,53 @@ footer .crew{display:block;font-family:var(--ui);font-size:13px;color:var(--ink-
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none !important;transition:none !important;}
 }
+
+/* ── 연말 옷 B 「창밖은 아직 밤」 (12월만 · 1월에 이 블록째 걷는다) ── */
+.ye-band{padding:var(--row) 0 calc(var(--row) * 1.5);position:relative;}
+/* 아래 가장자리 첫빛 — 글자가 앉지 않는 선 하나만 흐른다 */
+.ye-band::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:2px;pointer-events:none;
+  background:linear-gradient(90deg,transparent 0%,var(--amber) 28%,var(--hl) 50%,var(--amber) 72%,transparent 100%);
+}
+.ye-stamp{text-align:right;font-family:var(--display);}
+.ye-stamp b{display:block;font-weight:700;font-size:46px;line-height:calc(var(--row) * 2);letter-spacing:-.02em;color:var(--on-dark);}
+.ye-stamp span{display:block;font-family:var(--ui);font-size:15px;line-height:var(--row);color:var(--hl);}
+.ye-line{font-family:var(--display);font-size:clamp(22px,2.2vw,28px);line-height:calc(var(--row) * 2);color:var(--on-dark);letter-spacing:-.02em;}
+.ye-days{display:flex;align-items:center;flex-wrap:wrap;height:var(--row);column-gap:18px;}
+.ye-days .wk{display:flex;gap:7px;}
+.ye-days i{display:block;width:11px;height:11px;border-radius:50%;background:var(--amber);}
+.ye-days i.off{background:transparent;border:1.5px solid rgba(255,255,255,.7);}
+.ye-cap{font-family:var(--ui);font-size:14.5px;line-height:var(--row);color:var(--on-dark-soft);}
+@media (max-width:720px){
+  .ye-band{padding:calc(var(--row) * .5) 0 calc(var(--row) * .5);}
+  .ye-stamp{text-align:left;}
+  .ye-stamp b,.ye-stamp span{display:inline;font-size:15px;line-height:var(--row);}
+  .ye-stamp span{font-size:13px;margin-left:.35em;}
+  .ye-line{font-size:19px;line-height:var(--row);padding-top:0;}
+  .ye-days{column-gap:9px;}
+  .ye-days .wk{gap:4px;}
+  .ye-days i{width:8px;height:8px;}
+  .ye-days i.off{border-width:1.2px;}
+  .ye-cap{font-size:13px;}
+}
+/* ── /연말 옷 B ── */
 </style>
 </head>
 <body class="v-a">
 <!-- 매달 바꿀 곳(한 번에): 기간 — meta description · 정보 줄 「기간」 · 폰 바닥 띠 · 쉬는 날 줄 / 폼이 바뀌면 신청 주소 세 곳(첫 단추·맺음 단추·바닥 띠) -->
+
+<!-- 연말 옷 -->
+<section class="ye-band night ruled" aria-label="2026년 12월">
+  <div class="sheet">
+    <p class="mg ye-stamp"><b>12</b> <span>십이월</span></p>
+    <div class="mn">
+      <p class="ye-line">2026년, 마지막 한 달의 새벽</p>
+      <div class="ye-days" role="img" aria-label="12월 평일 새벽 1일부터 30일까지. 25일과 31일은 쉽니다"><span class="wk"><i></i><i></i><i></i><i></i></span><span class="wk"><i></i><i></i><i></i><i></i><i></i></span><span class="wk"><i></i><i></i><i></i><i></i><i></i></span><span class="wk"><i></i><i></i><i></i><i></i><i class="off"></i></span><span class="wk"><i></i><i></i><i></i><i class="off"></i></span></div>
+      <p class="ye-cap">12월의 평일 새벽 · 빈 동그라미는 쉬는 날</p>
+    </div>
+  </div>
+</section>
+<!-- /연말 옷 -->
 
 <header class="hero hero-a ruled">
   <div class="sheet top"><div class="mg wordmark">POGNARU STUDIO</div></div>
